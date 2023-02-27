@@ -1,15 +1,21 @@
 export default function ChiffreRomain(n: number) {
   let result: string = "";
-
-  while (n >= 1000) {
-    n -= 1000;
-    result += "M";
+  let number = [1000];
+  let key = ["M"];
+  for (let i = 0; i < number.length; i++) {
+    const elemetKey = key[i];
+    const element = number[i];
+    while (n >= element) {
+      n -= element;
+      result += elemetKey;
+    }
   }
-  if (n >= 900) {
+
+  while (n >= 900) {
     n -= 900;
     result += "CM";
   }
-  if (n >= 500) {
+  while (n >= 500) {
     n -= 500;
     result += "D";
   }
@@ -17,7 +23,7 @@ export default function ChiffreRomain(n: number) {
     n -= 100;
     result += "C";
   }
-  if (n >= 90) {
+  while (n >= 90) {
     n -= 90;
     result += "XC";
   }
@@ -29,15 +35,15 @@ export default function ChiffreRomain(n: number) {
     n -= 10;
     result += "X";
   }
-  if (n === 9) {
+  while (n >= 9) {
     n -= 9;
     result += "IX";
   }
-  if (n >= 5) {
+  while (n >= 5) {
     n -= 5;
     result += "V";
   }
-  if (n === 4) {
+  while (n >= 4) {
     n -= 4;
     result += "IV";
   }
