@@ -1,3 +1,6 @@
-export default function ChiffreRomain() {
-  console.log("Hello :)");
+export default function ChiffreRomain(n: number) {
+	if (n === 1) {
+		console.log('I');
+	}
 }
+ChiffreRomain(1);
