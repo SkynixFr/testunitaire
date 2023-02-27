@@ -1,6 +1,26 @@
 export default function ChiffreRomain(n: number) {
   let result: string = "";
 
+  while (n >= 1000) {
+    n -= 1000;
+    result += "M";
+  }
+  if (n >= 900) {
+    n -= 900;
+    result += "CM";
+  }
+  if (n >= 500) {
+    n -= 500;
+    result += "D";
+  }
+  while (n >= 100) {
+    n -= 100;
+    result += "C";
+  }
+  if (n >= 90) {
+    n -= 90;
+    result += "XC";
+  }
   while (n >= 50) {
     n -= 50;
     result += "L";
